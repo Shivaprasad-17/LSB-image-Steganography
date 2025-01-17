@@ -1,4 +1,4 @@
-Name:Hemanth S
+Name:Shivaprasad C M
 Date:21/10/24
 project:LSB image steganography
 
