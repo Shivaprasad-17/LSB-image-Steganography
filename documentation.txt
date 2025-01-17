@@ -1,0 +1,107 @@
+Name:Hemanth S
+Date:21/10/24
+project:LSB image steganography
+
+Sample execution:
+
+./a.out
+./a.out: Encoding: ./a.out -e <.bmp file> <.txt file> [output file]
+./a.out: Decoding: ./a.out -d <.bmp file> [output file]
+
+
+------------Encoding--------------
+test case 1->
+./a.out -e beautiful.bmp secret.txt
+INFO: Output File not mentioned. Creating staged_img.bmp as default
+INFO: Opening required files
+INFO: Opened beautiful.bmp
+INFO: Opened secret.txt
+INFO: Opened staged_img.bmp
+INFO: Done
+INFO: ## Encoding Procedure Started ##
+INFO: Checking for secret.txt size
+INFO: Done. Not Empty
+INFO: Checking for beautiful.bmp capacity to handle secret.txt
+INFO: Done. Found OK
+INFO: Copying Image Header
+INFO: Done
+INFO: Encoding Magic String Signature
+INFO: Done
+INFO: Encoding secret.txt File Extension
+INFO: Done
+INFO: Encoding secret.txt File Size
+INFO: Done
+INFO: Encoding secret.txt File Data
+INFO: Done
+INFO: Coping Left Over Data
+INFO: Done
+## Encoding Done Successfully ##
+
+
+test case 2->
+./a.out -e beautiful.bmp secret.txt encoded.bmp
+INFO: Opening required files
+INFO: Opened beautiful.bmp
+INFO: Opened secret.txt
+INFO: Opened encoded.bmp
+INFO: Done
+INFO: ## Encoding Procedure Started ##
+INFO: Checking for secret.txt size
+INFO: Done. Not Empty
+INFO: Checking for beautiful.bmp capacity to handle secret.txt
+INFO: Done. Found OK
+INFO: Copying Image Header
+INFO: Done
+INFO: Encoding Magic String Signature
+INFO: Done
+INFO: Encoding secret.txt File Extension
+INFO: Done
+INFO: Encoding secret.txt File Size
+INFO: Done
+INFO: Encoding secret.txt File Data
+INFO: Done
+INFO: Coping Left Over Data
+INFO: Done
+## Encoding Done Successfully ##
+
+
+------------Decoding--------------
+test case 1->
+./a.out -d staged_img.bmp
+INFO: ## Decoding Procedure Started ##
+INFO: Opening required files
+INFO: Opened staged_img.bmp
+INFO: Decoding Magic String Signature
+INFO: Enter the magic string:#*
+INFO: Magic string verified
+INFO: Done
+INFO: Decoding Output File Extension
+INFO: Done
+INFO: Output File not mentioned. Creating decoded.txt as default
+INFO: Opened decoded.txt
+INFO: Done. Opened all required files
+INFO: Decoding decoded.txt File Size
+INFO: Done
+INFO: Decoding decoded.txt File Data
+INFO: Done
+INFO: ## Decoding Done Successfully ##
+
+
+test case 2->
+./a.out -d staged_img.bmp test.sh
+INFO: ## Decoding Procedure Started ##
+INFO: Opening required files
+INFO: Opened staged_img.bmp
+INFO: Decoding Magic String Signature
+INFO: Enter the magic string:#*
+INFO: Magic string verified
+INFO: Done
+INFO: Decoding Output File Extension
+INFO: Done
+INFO: Opened test.txt
+INFO: Done. Opened all required files
+INFO: Decoding test.txt File Size
+INFO: Done
+INFO: Decoding test.txt File Data
+INFO: Done
+INFO: ## Decoding Done Successfully ##
